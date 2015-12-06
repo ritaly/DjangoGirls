@@ -17,6 +17,8 @@
     margin-left: 40px;
 }
 
+.detail h1 {font-family: 'Pacifico', cursive;} 
+
 h3 {border-bottom: 3px solid rgb(204, 51, 51);
 }
 h3 a{color:#CC3333;
