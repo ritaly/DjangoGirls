@@ -1,26 +1,40 @@
+{% load staticfiles %}
 <!doctype html>
+
 <html>
     <head>
         <title>Django Girls blog</title>
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+		
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     </head>
     <body>
-        <div>
-            <h1><a href="">Django Girls Blog</a></h1>
+    
+        
+        <div class="page-header">
+            <h1><a href="">Django Girls</a></h1>
         </div>
+        <div class="col-sm-12">
 						<p>
 						 „Bądź tak uprzejmy i spróbuj przemyśleć następujący problem - na co by się zdało twoje dobro, gdyby nie istniało zło, i jak by wyglądała ziemia, gdyby z niej zniknęły cienie? Przecież cienie rzucają przedmioty i ludzie. Oto cień mojej szpady. Ale są również cienie drzew i cienie istot żywych. A może chcesz złupić całą kulę ziemską, usuwając z jej powierzchni wszystkie drzewa i wszystko, co żyje, ponieważ masz taką fantazję, żeby się napawać niezmąconą światłością? Jesteś głupi.” </p>
 						 <p><strong>M. Bułhakow</strong>, <em>Mistrz i Małgorzata</em>.</p>
-				<div>
-     {% for post in posts %}
-    <div>
-    <h1><a href="">{{ post.title }}</a></h1>
-        <p>Opublikowano : {{ post.published_date }}</p>
-        
-        <p>{{ post.text|linebreaks }}</p>
-    </div>
-{% endfor %}
+				<div class="content container">
+    <div class="row">
+        <div class="col-md-8">
+            {% for post in posts %}
+                <div class="post">
+                    <div class="date">
+                        <p>published: {{ post.published_date }}</p>
+                    </div>
+                    <h3><a href="">{{ post.title }}</a></h3>
+                    <p>{{ post.text|linebreaks }}</p>
+                </div>
+            {% endfor %}
         </div>
-
+    </div>
+</div>
+</div>
        
     </body>
 </html>
